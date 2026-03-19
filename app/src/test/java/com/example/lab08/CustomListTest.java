@@ -11,5 +11,13 @@ public class CustomListTest {
         // This will show an error because hasCity() does not exist yet
         assertTrue(list.hasCity(calgary));
     }
+    @Test
+    public void testDeleteCity() {
+        CustomList list = new CustomList();
+        City city = new City("Regina", "SK");
+        list.addCity(city);
+        list.deleteCity(city);
+        assertFalse(list.hasCity(city));
+    }
 
 }
